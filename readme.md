@@ -1,7 +1,7 @@
-# Random Generator
+# Random Generator Application Demonstrating usage of Eclipse JKube for deploying onto Kubernetes
 
 This is a simple random number generation application which just generates a random string on `/random` endpoint. It just
-demonstrates usage of Eclipse Jkube: https://github.com/eclipse/jkube
+demonstrates usage of Eclipse JKube: https://github.com/eclipse/jkube
 
 ## How to build
 Just run `mvn clean install`
@@ -22,6 +22,7 @@ After spring boot initializes, just do a `curl localhost:8080/random` to check e
   ```
      mvn k8s:build
   ```
+  <img src="https://developers.redhat.com/blog/wp-content/uploads/2019/12/Screenshot-from-2019-12-19-18-32-45-768x542.png" alt="Eclipse JKube Build"/>
 
 - Generating Kubernetes Manifests
   
@@ -31,6 +32,7 @@ After spring boot initializes, just do a `curl localhost:8080/random` to check e
   ```
      mvn k8s:resource
   ```
+  <img src="https://developers.redhat.com/blog/wp-content/uploads/2019/12/Screenshot-from-2019-12-19-18-39-13-768x273.png" alt="Eclipse JKube resource generation" />
 
 - Deploying application onto Kubernetes
   
@@ -39,6 +41,8 @@ After spring boot initializes, just do a `curl localhost:8080/random` to check e
   ```
      mvn k8s:deploy
   ```
+  <img src="https://developers.redhat.com/blog/wp-content/uploads/2019/12/Screenshot-from-2019-12-19-18-50-30-300x244.png" alt="Eclipse JKube applying generated Manifests" />
+  
   You'd observe they would be applied onto your Kubernetes Cluster.
 
 - Undeploy your application from Kubernetes cluster
@@ -48,3 +52,4 @@ After spring boot initializes, just do a `curl localhost:8080/random` to check e
   ```
      mvn k8s:undeploy
   ```
+  <img src="https://developers.redhat.com/blog/wp-content/uploads/2019/12/Screenshot-from-2019-12-19-18-53-11-300x182.png" alt="Eclipse JKube deleting deployed resources" />
