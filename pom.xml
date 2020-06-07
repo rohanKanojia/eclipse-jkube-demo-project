@@ -24,7 +24,7 @@
         <java.version>1.8</java.version>
         <jkube.version>1.0.0-alpha-3</jkube.version>
         <jkube.enricher.jkube-service.type>NodePort</jkube.enricher.jkube-service.type>
-        <jkube.generator.name>docker.io/rohankanojia/random-generator:${version}</jkube.generator.name>
+        <jkube.generator.name>docker.io/rohankanojia/random-generator:${project.version}</jkube.generator.name>
     </properties>
 
     <dependencies>
