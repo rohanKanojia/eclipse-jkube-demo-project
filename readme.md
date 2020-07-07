@@ -1,5 +1,7 @@
 # Random Generator Application Demonstrating usage of Eclipse JKube for deploying onto Kubernetes
 
+![License](https://img.shields.io/github/license/rohanKanojia/eclipse-jkube-demo-project)
+
 This is a simple random number generation application which just generates a random string on `/random` endpoint. It just
 demonstrates usage of Eclipse JKube: https://github.com/eclipse/jkube
 
