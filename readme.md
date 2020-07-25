@@ -19,6 +19,7 @@ demonstrates usage of Eclipse JKube: https://github.com/eclipse/jkube
 * [How to Run](#How-to-run)
 * [Deploying on Kubernetes](#deploying-on-kubernetes)
 * [Deploying on Red Hat OpenShift](#deploying-on-red-hat-openshift)
+* [Migrating from Fabric8 Maven Plugin](#migrating-from-fabric8-maven-plugin)
 
 ## How to build
 Just run `mvn clean install`
@@ -201,3 +202,13 @@ random-generator   random-generator-rokumar.b6ff.rh-idev.openshiftapps.com      
 }
 ~/work/repos/eclipse-jkube-demo-project : $ 
 ```
+
+## Migrating from Fabric8 Maven Plugin
+
+If you're using Fabric8 Maven Plugin to handle your Kubernetes/OpenShift operations, you can easily migrate to Eclipse JKube usingthe migrate goal:
+
+```
+mvn org.eclipse.jkube:kubernetes-maven-plugin:migrate
+```
+
+Please have a look at Eclipse JKube's [migration guide](https://www.eclipse.org/jkube/docs/migration-guide/) for more details.
