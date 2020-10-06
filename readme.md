@@ -136,7 +136,7 @@ Using project "rokumar".
 ```
 
 ### Doing an S2I based build 
-OpenShift has a really nice [Source-to-image(S2I)](https://docs.openshift.com/container-platform/3.9/creating_images/s2i.html#creating-images-s2i) framework which eases writing images by just providing application source code as an input. OpenShift Maven Plugin relies on this for build process. Here is how it would look:
+OpenShift has a really nice [Source-to-image(S2I)](https://docs.openshift.com/container-platform/3.9/creating_images/s2i.html#creating-images-s2i) framework which eases writing images by just providing application source code as an input. Note that you would need to comment out `jkube.generator.name` property that we added during docker build in order to use this. OpenShift Maven Plugin relies on this for build process. Here is how it would look:
 > mvn oc:build
 
 >![Elipse JKube OMP build](screenshots/ocbuild.png)
