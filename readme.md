@@ -1,5 +1,6 @@
 # Random Generator Application Demonstrating usage of Eclipse JKube for deploying onto Kubernetes
 
+![Java CI with Maven](https://github.com/rohanKanojia/eclipse-jkube-demo-project/workflows/Java%20CI%20with%20Maven/badge.svg)
 ![License](https://img.shields.io/github/license/rohanKanojia/eclipse-jkube-demo-project)
 [![Twitter](https://img.shields.io/twitter/follow/jkubeio?style=social)](https://twitter.com/jkubeio)
 
