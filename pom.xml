@@ -22,9 +22,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <jkube.version>1.1.0</jkube.version>
+        <jkube.version>1.1.1</jkube.version>
         <jkube.enricher.jkube-service.type>NodePort</jkube.enricher.jkube-service.type>
-        <jkube.generator.name>docker.io/rohankanojia/random-generator:${project.version}</jkube.generator.name>
     </properties>
 
     <dependencies>
@@ -65,6 +64,7 @@
                 <version>${jkube.version}</version>
             </plugin>
             
+            
             <plugin>
                 <groupId>org.eclipse.jkube</groupId>
                 <artifactId>openshift-maven-plugin</artifactId>
@@ -74,4 +74,58 @@
     </build>
 
 
+    <profiles>
+        <profile>
+            <id>openshift</id>
+            <properties>
+                <jkube.generator.from>registry.redhat.io/fuse7/fuse-java-openshift:1.7</jkube.generator.from>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.eclipse.jkube</groupId>
+                        <artifactId>openshift-maven-plugin</artifactId>
+                        <version>1.1.1</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>resource</goal>
+                                    <goal>build</goal>
+                                    <goal>apply</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <resources>
+                                <labels>
+                                    <pod>
+                                        <property>
+                                            <name>com.company</name>
+                                            <value>Red_Hat</value>
+                                        </property>
+                                        <property>
+                                            <name>rht.prod_name</name>
+                                            <value>Red_Hat_Integration</value>
+                                        </property>
+                                        <property>
+                                            <name>rht.prod_ver</name>
+                                            <value>7.9</value>
+                                        </property>
+                                        <property>
+                                            <name>rht.comp</name>
+                                            <value>spring-boot-cxf-jaxws</value>
+                                        </property>
+                                        <property>
+                                            <name>rht.comp_ver</name>
+                                            <value>foo</value>
+                                        </property>
+                                    </pod>
+                                </labels>
+                            </resources>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
