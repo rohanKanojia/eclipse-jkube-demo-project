@@ -22,9 +22,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <jkube.version>1.2.0</jkube.version>
+        <docker.user>rohankanojia</docker.user>
+        <jkube.version>1.3.0</jkube.version>
         <jkube.enricher.jkube-service.type>NodePort</jkube.enricher.jkube-service.type>
-        <jkube.generator.name>docker.io/rohankanojia/random-generator:${project.version}</jkube.generator.name>
+        <jkube.generator.name>docker.io/${docker.user}/random-generator:${project.version}</jkube.generator.name>
     </properties>
 
     <dependencies>
