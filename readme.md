@@ -12,6 +12,8 @@
   </a>
 </p>
 
+> Note: This is a maven project demo-ing Eclipse JKube Kubernetes Maven Plugin. Gradle Users are advised to visit this repository: https://github.com/rohankanojia-forks/eclipse-jkube-demo-project-gradle
+
 This is a simple random number generation application which just generates a random string on `/random` endpoint. It just
 demonstrates usage of Eclipse JKube: https://github.com/eclipse/jkube
 
