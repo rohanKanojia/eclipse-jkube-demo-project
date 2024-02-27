@@ -23,7 +23,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <docker.user>rohankanojia</docker.user>
-        <jkube.version>1.16.0</jkube.version>
+        <jkube.version>1.16.1</jkube.version>
         <jkube.enricher.jkube-service.type>NodePort</jkube.enricher.jkube-service.type>
     </properties>
 
@@ -79,6 +79,22 @@
                 <artifactId>openshift-maven-plugin</artifactId>
                 <version>${jkube.version}</version>
             </plugin>
+            <plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>properties-maven-plugin</artifactId>
+    <version>1.0.0</version>
+    <executions>
+        <execution>
+            <phase>generate-resources</phase>
+            <goals>
+                <goal>write-project-properties</goal>
+            </goals>
+            <configuration>
+                <outputFile>${project.build.outputDirectory}/properties-from-pom.properties</outputFile>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
         </plugins>
     </build>
 
